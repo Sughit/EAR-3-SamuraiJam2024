@@ -17,6 +17,15 @@ public class Movement : MonoBehaviour
         float moveHorizontal = Input.GetAxis ("Horizontal");
         float moveVertical = Input.GetAxis ("Vertical");
  
-        rb.velocity = new Vector2 (moveHorizontal*speed, moveVertical*speed);
+        if((moveHorizontal == 1 || moveHorizontal == -1) && (moveVertical == 1 || moveVertical == -1))
+        {
+            rb.velocity = new Vector2 (moveHorizontal*(speed-1), moveVertical*(speed-1));
+            Debug.Log(rb.velocity);
+        }
+        else
+        {
+            rb.velocity = new Vector2 (moveHorizontal*speed, moveVertical*speed);
+            Debug.Log(rb.velocity);
+        }
     }
 }
