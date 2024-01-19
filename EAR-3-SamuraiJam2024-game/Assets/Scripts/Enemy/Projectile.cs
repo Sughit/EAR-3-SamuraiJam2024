@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] float speed, damage = 5f;
     Transform target;
     Vector3 targetPos;
 
@@ -17,7 +17,12 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag != "Enemy") Destroy(gameObject);
+        if(other.gameObject.tag != "Enemy") 
+        {
+            Destroy(gameObject);
+            if(other.gameObject.tag == "Player")
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
     }
 
     void Update()
