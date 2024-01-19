@@ -13,10 +13,14 @@ public class Movement : MonoBehaviour
     [SerializeField] float dashCooldown = 1f;
     bool isDashing;
     bool canDash = true;
+    Animator anim;
+    SpriteRenderer sprite;
 
     void Start()
     {
-        rb=GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -29,7 +33,19 @@ public class Movement : MonoBehaviour
         moveInput.Normalize();
 
         rb.velocity = moveInput * speed;
+
+        if(moveInput.x < 0)
+            sprite.flipX = true;
+        else
+            sprite.flipX = false;
+
+
+        if(moveInput != Vector2.zero)
+            anim.SetBool("mers", true);
+        else
+            anim.SetBool("mers", false);
         
+
         if(Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             StartCoroutine(Dash());
@@ -40,6 +56,7 @@ public class Movement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        anim.SetTrigger("dash");
         rb.velocity = new Vector2(moveInput.x * dashSpeed, moveInput.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
