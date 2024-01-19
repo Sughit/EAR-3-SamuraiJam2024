@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422049441}
   - component: {fileID: 422049442}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508813482}
   - component: {fileID: 508813483}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 1101268822}
   - component: {fileID: 1101268821}
   - component: {fileID: 1101268820}
+  - component: {fileID: 1101268823}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -691,7 +692,8 @@ Transform:
   m_LocalPosition: {x: 0.6301843, y: -4.447681, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1256619765}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -758,6 +760,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13853326, y: 0.19216092}
   m_EdgeRadius: 0
+--- !u!114 &1101268823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101268816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf62bd0bf3513b3449439c02df5934df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPoint: {fileID: 1256619765}
+  attackRange: 0.5
+  damage: 2
+  attackRate: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1154158334
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1013,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1256619764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256619765}
+  m_Layer: 0
+  m_Name: attackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1256619765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256619764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.076, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1101268819}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401504213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1055,7 @@ GameObject:
   - component: {fileID: 1401504215}
   - component: {fileID: 1401504214}
   - component: {fileID: 1401504216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1287,7 +1339,7 @@ GameObject:
   - component: {fileID: 1895196569}
   - component: {fileID: 1895196568}
   - component: {fileID: 1895196567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
