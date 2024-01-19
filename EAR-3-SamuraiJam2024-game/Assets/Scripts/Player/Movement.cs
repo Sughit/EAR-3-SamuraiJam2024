@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] float speed = 8f;
+    [SerializeField] public float speed = 8f;
     Vector2 moveInput;
     Rigidbody2D rb;
 
@@ -14,13 +14,11 @@ public class Movement : MonoBehaviour
     bool isDashing;
     bool canDash = true;
     Animator anim;
-    SpriteRenderer sprite;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -33,11 +31,17 @@ public class Movement : MonoBehaviour
         moveInput.Normalize();
 
         rb.velocity = moveInput * speed;
-
+        Vector3 localScale = transform.localScale;
         if(moveInput.x < 0)
-            sprite.flipX = true;
-        else
-            sprite.flipX = false;
+            {
+                localScale.x = -8f;
+                transform.localScale = localScale;
+            }
+        else if (moveInput.x >0)
+            {
+                localScale.x = 8f;
+                transform.localScale = localScale;
+            }
 
 
         if(moveInput != Vector2.zero)
