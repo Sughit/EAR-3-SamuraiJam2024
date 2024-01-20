@@ -23,28 +23,13 @@ public class PlayerAttack : MonoBehaviour
             Debug.Log("Attack");
             anim.SetTrigger("atacL");
             GetComponent<Movement>().speed = 0.5f;
-            foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
-            {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(5);
-                Debug.Log(other.gameObject.name);
-            }
-            canAttack=false;
-            Invoke("ResetAttack", attackRate);
         }
 
         if(Input.GetMouseButtonDown(1) && canAttack)
         {
-
             Debug.Log("AttackHeavy");
             anim.SetTrigger("atacH");
             GetComponent<Movement>().speed = 0.5f;
-            foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
-            {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
-                Debug.Log(other.gameObject.name);
-            }
-            canAttack=false;
-            Invoke("ResetAttack", attackHeavyRate);
         }
     }
 
@@ -62,4 +47,28 @@ public class PlayerAttack : MonoBehaviour
     {
         GetComponent<Movement>().speed = 8f;
     }
+
+    void AttackH()
+    {
+        foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
+            {
+                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+                Debug.Log(other.gameObject.name);
+            }
+            canAttack=false;
+            Invoke("ResetAttack", attackHeavyRate);
+    }
+
+    void AttackL()
+    {
+        foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
+            {
+                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(5);
+                Debug.Log(other.gameObject.name);
+            }
+            canAttack=false;
+            Invoke("ResetAttack", attackHeavyRate);
+    }
+
+
 }
