@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float health, maxHealth = 20f;
-    Animator anim;
+    public Animator anim;
+    public PlayerAttack playerATK;
+    public Movement movement;
     void Awake()
     {
-        anim = GetComponent<Animator>();
         health = maxHealth;
     }
 
@@ -16,7 +17,8 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         anim.SetTrigger("hurt");
-        GetComponent<Movement>().speed = 0.5f;
+        movement.speed = 0.5f;
+        playerATK.ResetAttack();
         //GetComponent<SpriteRenderer>().color = new Color(0.9433962f, 0.502848f, 0.502848f, 1);
     }
 

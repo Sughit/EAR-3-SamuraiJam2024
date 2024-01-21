@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] public float speed = 8f;
     Vector2 moveInput;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     [SerializeField] float dashSpeed = 12f;
     [SerializeField] float dashDuration = .3f;
@@ -17,7 +17,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 

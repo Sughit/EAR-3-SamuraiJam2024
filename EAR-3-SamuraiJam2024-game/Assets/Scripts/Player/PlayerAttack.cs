@@ -20,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
+            canAttack=false;
             Debug.Log("Attack");
             anim.SetTrigger("atacL");
             GetComponent<Movement>().speed = 0.5f;
@@ -27,13 +28,14 @@ public class PlayerAttack : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1) && canAttack)
         {
+            canAttack=false;
             Debug.Log("AttackHeavy");
             anim.SetTrigger("atacH");
             GetComponent<Movement>().speed = 0.5f;
         }
     }
 
-    void ResetAttack()
+    public void ResetAttack()
     {
         canAttack=true;
     }
@@ -55,7 +57,6 @@ public class PlayerAttack : MonoBehaviour
                 other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
                 Debug.Log(other.gameObject.name);
             }
-            canAttack=false;
             Invoke("ResetAttack", attackHeavyRate);
     }
 
@@ -66,9 +67,6 @@ public class PlayerAttack : MonoBehaviour
                 other.gameObject.GetComponent<EnemyHealth>().TakeDamage(5);
                 Debug.Log(other.gameObject.name);
             }
-            canAttack=false;
-            Invoke("ResetAttack", attackHeavyRate);
+            Invoke("ResetAttack", attackRate);
     }
-
-
 }
