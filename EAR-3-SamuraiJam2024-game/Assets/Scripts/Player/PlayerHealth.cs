@@ -17,13 +17,13 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         anim.SetTrigger("hurt");
         GetComponent<Movement>().speed = 0.5f;
-        GetComponent<SpriteRenderer>().color = new Color(0.9433962f, 0.502848f, 0.502848f, 1);
+        //GetComponent<SpriteRenderer>().color = new Color(0.9433962f, 0.502848f, 0.502848f, 1);
     }
 
     public void ResetSpeed()
     {
         GetComponent<Movement>().speed = 8f;
-        GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+        //GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
     }
 
     void Update()
