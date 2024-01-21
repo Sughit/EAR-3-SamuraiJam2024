@@ -7,6 +7,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float speed;
     public Transform target;
     [SerializeField] float minDis;
+    [SerializeField] float timeToAttack;
+    float currentTimeToAttack;
+    [SerializeField] float damage;
+
+    void Awake()
+    {
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    }
 
     void Update()
     {
@@ -16,7 +24,17 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
-            //attack
+            if(currentTimeToAttack<=0) 
+            {
+                currentTimeToAttack = timeToAttack;
+                Attack();
+            }
+            else currentTimeToAttack -= Time.deltaTime;
         }
+    }
+
+    void Attack()
+    {
+        target.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 }

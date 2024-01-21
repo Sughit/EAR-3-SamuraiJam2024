@@ -13,6 +13,11 @@ public class ShootingEnemy : MonoBehaviour
     float nextShotTime;
     bool canShoot=true;
 
+    void Awake()
+    {
+        target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+    }
+
     void Update()
     {
         if(Time.time > nextShotTime && canShoot)

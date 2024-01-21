@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject canStartText;
     [SerializeField] Animator transition;
-    [SerializeField] bool gameStarted;
+    public bool gameStarted;
     [SerializeField] GameObject player;
     [SerializeField] Canvas bg;
     bool canStart;
@@ -48,8 +48,23 @@ public class GameManager : MonoBehaviour
 
     void GameReady()
     {
+        Debug.Log("Ar trebui sa mearga");
         transition.SetTrigger("end");
         bg.gameObject.SetActive(true);
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
+    }
+
+    public void EndGame()
+    {
+        gameStarted=false;
+        transition.SetTrigger("start");
+        Invoke("GameUnready", 0.55f);
+    }
+
+    void GameUnready()
+    {
+        transition.SetTrigger("end");
+        bg.gameObject.SetActive(false);
+        player.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
     }
 }
