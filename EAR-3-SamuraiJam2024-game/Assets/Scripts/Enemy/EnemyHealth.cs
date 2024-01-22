@@ -22,4 +22,9 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnDestroy()
+    {
+        this.transform.parent.gameObject.GetComponent<SpawnEnemy>().spawnedEnemies.Remove(gameObject);
+    }
 }
