@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 0}
-  minDis: 1
-  timeToAttack: 5
+  minDis: 1.6
+  timeToAttack: 2
   damage: 5
 --- !u!61 &8838978859147188194
 BoxCollider2D:

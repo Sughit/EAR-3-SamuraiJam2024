@@ -10,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public Movement movement;
     public static bool canBeHit = true;
     Rigidbody2D rb;
+    float hurtForce = 60f;
+    public Vector3 direction, relative;
+    public SpriteRenderer sprite;
     void Awake()
     {
         health = maxHealth;
@@ -18,21 +21,25 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        relative = transform.position - direction;
         if(canBeHit)
         {
-            rb.AddForce(transform.right * 20f, ForceMode2D.Impulse);
+            transform.position = Vector2.Lerp(transform.position, relative, Time.deltaTime * hurtForce);
+            //transform.Translate(Vector2.right * Time.deltaTime * hurtForce);
+            //relative = Vector3.zero;
+            //direction = Vector3.zero;
             health -= damage;
             anim.SetTrigger("hurt");
             movement.speed = 0.5f;
             playerATK.ResetAttack();
-            //GetComponent<SpriteRenderer>().color = new Color(0.9433962f, 0.502848f, 0.502848f, 1);
+            //sprite.color = new Color(1f, 1f, 1f, 1);
         }
     }
 
     public void ResetSpeed()
     {
         GetComponent<Movement>().speed = 8f;
-        //GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+        //sprite.color = new Color(0f,0f,0f,1);
     }
 
     void Update()

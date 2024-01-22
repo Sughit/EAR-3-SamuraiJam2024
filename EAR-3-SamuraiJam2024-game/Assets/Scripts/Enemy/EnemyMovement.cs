@@ -35,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Attack()
     {
+        target.GetComponent<PlayerHealth>().direction = (transform.position - target.transform.position) * 3f;
         target.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 }

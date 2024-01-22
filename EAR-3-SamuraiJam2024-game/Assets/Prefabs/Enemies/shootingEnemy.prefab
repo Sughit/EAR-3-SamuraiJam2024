@@ -77,7 +77,7 @@ MonoBehaviour:
   target: {fileID: 0}
   minDis: 5
   projectile: {fileID: 1967232443298547668, guid: f648899d78493554fb9b3c7de9e4fd07, type: 3}
-  timeBetweenShots: 4
+  timeBetweenShots: 2
 --- !u!114 &5905552652065533686
 MonoBehaviour:
   m_ObjectHideFlags: 0
