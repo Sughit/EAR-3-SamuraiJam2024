@@ -13,17 +13,26 @@ public class PlayerHealth : MonoBehaviour
     float hurtForce = 60f;
     public Vector3 direction, relative;
     public SpriteRenderer sprite;
+    public GameObject[] taieturi;
+    public int x;
+    public GameObject taieturiP;
     void Awake()
     {
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
     }
+    void Start()
+    {
+    }
 
     public void TakeDamage(float damage)
     {
         relative = transform.position - direction;
+        
         if(canBeHit)
         {
+            x = UnityEngine.Random.Range(0,8);
+            taieturi[x].SetActive(true);
             transform.position = Vector2.Lerp(transform.position, relative, Time.deltaTime * hurtForce);
             //transform.Translate(Vector2.right * Time.deltaTime * hurtForce);
             //relative = Vector3.zero;
@@ -38,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void ResetSpeed()
     {
-        GetComponent<Movement>().speed = 8f;
+        taieturi[x].SetActive(false);
         //sprite.color = new Color(0f,0f,0f,1);
     }
 
