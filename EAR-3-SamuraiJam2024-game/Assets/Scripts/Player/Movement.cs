@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
 
         rb.velocity = moveInput * speed;
         Vector3 localScale = transform.localScale;
+
         if(moveInput.x < 0)
             {
                 localScale.x = -8f;
@@ -57,12 +58,14 @@ public class Movement : MonoBehaviour
 
     IEnumerator Dash()
     {
+        PlayerHealth.canBeHit = false;
         canDash = false;
         isDashing = true;
         anim.SetTrigger("dash");
         rb.velocity = new Vector2(moveInput.x * dashSpeed, moveInput.y * dashSpeed);
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+        PlayerHealth.canBeHit = true;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;

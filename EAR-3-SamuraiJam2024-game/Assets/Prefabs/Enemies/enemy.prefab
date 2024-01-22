@@ -50,7 +50,7 @@ MonoBehaviour:
   speed: 5
   target: {fileID: 0}
   minDis: 1
-  timeToAttack: 2
+  timeToAttack: 5
   damage: 5
 --- !u!61 &8838978859147188194
 BoxCollider2D:

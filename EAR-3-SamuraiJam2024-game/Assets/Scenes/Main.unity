@@ -1449,6 +1449,29 @@ MonoBehaviour:
   anim: {fileID: 1101268825}
   playerATK: {fileID: 1101268821}
   movement: {fileID: 1101268822}
+--- !u!50 &1512701370 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5610118351155535981, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+  m_PrefabInstance: {fileID: 5610118352399719899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1512701371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512701364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ed3f48a359eddf49a2343c9e8fd3385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  rb: {fileID: 1512701370}
+  dashSpeed: 20
+  dashDuration: 0.2
+  dashCooldown: 1
+  anim: {fileID: 1101268825}
 --- !u!1 &1543672368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,13 +1863,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5610118351155535981, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610118351155535981, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5610118351155535982, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5610118351155535982, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5610118351155535982, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
       propertyPath: m_LocalPosition.y

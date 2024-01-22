@@ -8,18 +8,25 @@ public class PlayerHealth : MonoBehaviour
     public Animator anim;
     public PlayerAttack playerATK;
     public Movement movement;
+    public static bool canBeHit = true;
+    Rigidbody2D rb;
     void Awake()
     {
         health = maxHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
-        anim.SetTrigger("hurt");
-        movement.speed = 0.5f;
-        playerATK.ResetAttack();
-        //GetComponent<SpriteRenderer>().color = new Color(0.9433962f, 0.502848f, 0.502848f, 1);
+        if(canBeHit)
+        {
+            rb.AddForce(transform.right * 20f, ForceMode2D.Impulse);
+            health -= damage;
+            anim.SetTrigger("hurt");
+            movement.speed = 0.5f;
+            playerATK.ResetAttack();
+            //GetComponent<SpriteRenderer>().color = new Color(0.9433962f, 0.502848f, 0.502848f, 1);
+        }
     }
 
     public void ResetSpeed()
