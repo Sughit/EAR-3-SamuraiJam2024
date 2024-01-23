@@ -21,7 +21,7 @@ public class SpawnEnemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(GetComponent<GameManager>().gameStarted)
+        if(GameManager.gameStarted)
         {
             if(spawnTimer <=0)
             {

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject canStartText;
     [SerializeField] Animator transition;
-    public bool gameStarted;
+    public static bool gameStarted;
     [SerializeField] GameObject player;
     [SerializeField] Canvas bg;
     bool canStart;

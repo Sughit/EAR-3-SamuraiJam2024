@@ -23,6 +23,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        if(GetComponentInParent<OpenSkillTree>().skillGO.activeSelf) canAttack=false;
+        else canAttack=true;
+        
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             isAttacking = true;
