@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject shurikenPrefab;
     public float shurikenSpeed = 20f;
     public float shurikenRate = 1f;
-    public static bool canShurikenAttack;
+    public static bool canShurikenAttack, can2ShurikenAttack, can3ShurikenAttack;
     Movement movement;
     void Awake()
     {
@@ -49,9 +49,19 @@ public class PlayerAttack : MonoBehaviour
             canShuriken = false;
             anim.SetTrigger("shuriken");
             GetComponent<Movement>().speed = 4f;
-            ShootShurikens(0);
-            ShootShurikens(7);
-            ShootShurikens(-7);
+            if(can3ShurikenAttack)
+            {
+                ShootShurikens(0);
+                ShootShurikens(7);
+                ShootShurikens(-7);
+            }
+            else if(can2ShurikenAttack)
+            {
+                ShootShurikens(7);
+                ShootShurikens(-7);
+            }
+            else ShootShurikens(0);
+            
             Invoke("ResetShuriken", shurikenRate);
         }
     }

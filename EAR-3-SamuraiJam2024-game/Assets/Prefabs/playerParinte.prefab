@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 5947847420570786804}
   - component: {fileID: 1543461491747489021}
   - component: {fileID: 4078827984105617875}
+  - component: {fileID: 5450187560885805942}
   - component: {fileID: 622351192804769061}
   m_Layer: 0
   m_Name: shuriken3
@@ -213,6 +214,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5450187560885805942}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+        m_MethodName: Shuriken3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4078827984105617875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +244,18 @@ MonoBehaviour:
   cost: 3
   costText: {fileID: 929286158679443147}
   skillPointsText: {fileID: 3902270338375070366}
+--- !u!114 &5450187560885805942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169341014374429898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &622351192804769061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,6 +1295,7 @@ GameObject:
   - component: {fileID: 5883907775737635262}
   - component: {fileID: 5060749181818923987}
   - component: {fileID: 8598217561653499064}
+  - component: {fileID: 5367324064864071852}
   - component: {fileID: 910978223980909617}
   m_Layer: 0
   m_Name: shuriken2
@@ -1394,6 +1420,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5367324064864071852}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+        m_MethodName: Shuriken2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8598217561653499064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1414,6 +1452,18 @@ MonoBehaviour:
   cost: 2
   costText: {fileID: 8700804315995422592}
   skillPointsText: {fileID: 3902270338375070366}
+--- !u!114 &5367324064864071852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5844796944310147740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &910978223980909617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,6 +2129,7 @@ GameObject:
   - component: {fileID: 1509318140969726545}
   - component: {fileID: 134617291628080280}
   - component: {fileID: 217189728536150457}
+  - component: {fileID: 5126955578744085324}
   - component: {fileID: 5809735793653164533}
   m_Layer: 0
   m_Name: shuriken1
@@ -2203,6 +2254,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5126955578744085324}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+        m_MethodName: Shuriken1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &217189728536150457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2223,6 +2286,18 @@ MonoBehaviour:
   cost: 1
   costText: {fileID: 6527613802098263679}
   skillPointsText: {fileID: 3902270338375070366}
+--- !u!114 &5126955578744085324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716979056864092110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5809735793653164533
 MonoBehaviour:
   m_ObjectHideFlags: 0
