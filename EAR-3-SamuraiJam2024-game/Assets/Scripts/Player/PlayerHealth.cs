@@ -32,22 +32,18 @@ public class PlayerHealth : MonoBehaviour
         {
             x = UnityEngine.Random.Range(0,8);
             taieturi[x].SetActive(true);
-            transform.position = Vector2.Lerp(transform.position, relative, Time.deltaTime * hurtForce);
-            //transform.Translate(Vector2.right * Time.deltaTime * hurtForce);
-            //relative = Vector3.zero;
-            //direction = Vector3.zero;
+            transform.position = Vector2.Lerp(transform.position, relative, Time.deltaTime * hurtForce);;
+            StartCoroutine(ColorChange());
             health -= damage;
             anim.SetTrigger("hurt");
             movement.speed = 0.5f;
             playerATK.ResetAttack();
-            //sprite.color = new Color(1f, 1f, 1f, 1);
         }
     }
 
     public void ResetSpeed()
     {
         taieturi[x].SetActive(false);
-        //sprite.color = new Color(0f,0f,0f,1);
     }
 
     void Update()
@@ -56,5 +52,15 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("mort");
         }
+    }
+    IEnumerator ColorChange()
+    {
+        sprite.color = new Color(0f, 0f, 0f, 0f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Color(0f, 0f, 0f, 1f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Color(0f, 0f, 0f, 0f);
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = new Color(0f, 0f, 0f, 1f);
     }
 }

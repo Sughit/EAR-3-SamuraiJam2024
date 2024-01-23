@@ -14,9 +14,11 @@ public class PlayerAttack : MonoBehaviour
     public GameObject shurikenPrefab;
     public float shurikenSpeed = 20f;
     public float shurikenRate = 1f;
+    Movement movement;
     void Awake()
     {
         anim = GetComponent<Animator>();
+        movement = GetComponent<Movement>();
     }
 
     void Update()
@@ -38,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("atacH");
             GetComponent<Movement>().speed = 0.5f;
         }
-        if(Input.GetKeyDown(KeyCode.Q) && canShuriken && !isAttacking)
+        if(Input.GetKeyDown(KeyCode.Q) && canShuriken && !isAttacking && !movement.isDashing)
         {   
             canShuriken = false;
             anim.SetTrigger("shuriken");

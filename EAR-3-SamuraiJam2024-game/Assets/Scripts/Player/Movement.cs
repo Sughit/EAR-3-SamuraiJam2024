@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     [SerializeField] float dashSpeed = 12f;
     [SerializeField] float dashDuration = .3f;
     [SerializeField] float dashCooldown = 1f;
-    bool isDashing;
+    public bool isDashing;
     bool canDash = true;
     Animator anim;
     PlayerAttack playerATK;
@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
             anim.SetBool("mers", false);
         
 
-        if(Input.GetKeyDown(KeyCode.Space) && canDash)
+        if(Input.GetKeyDown(KeyCode.Space) && canDash && moveInput != Vector2.zero)
         {
             StartCoroutine(Dash());
         }
