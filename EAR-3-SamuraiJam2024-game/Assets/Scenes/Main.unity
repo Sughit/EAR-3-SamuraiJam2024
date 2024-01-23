@@ -2012,7 +2012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7778222371192855308, guid: 581cecfac7dc2be41993f3dc088361d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 581cecfac7dc2be41993f3dc088361d5, type: 3}
@@ -2411,5 +2411,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerParinte
       objectReference: {fileID: 0}
+    - target: {fileID: 5610118351332006536, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610118351332006536, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610118351332006540, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: shurikenRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5610118351332006540, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: shurikenPrefab
+      value: 
+      objectReference: {fileID: 8167253617679721084, guid: 827f758bd60f8fb4ca4730972b15e944, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}

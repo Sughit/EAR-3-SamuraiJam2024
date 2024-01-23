@@ -14,9 +14,13 @@ public class Movement : MonoBehaviour
     bool isDashing;
     bool canDash = true;
     Animator anim;
+    PlayerAttack playerATK;
+    float x;
 
     void Start()
     {
+        playerATK = GetComponent<PlayerAttack>();
+        x = playerATK.shurikenSpeed;
         anim = GetComponent<Animator>();
     }
 
@@ -35,11 +39,13 @@ public class Movement : MonoBehaviour
         if(moveInput.x < 0)
             {
                 localScale.x = -8f;
+                playerATK.shurikenSpeed = -x;
                 transform.localScale = localScale;
             }
         else if (moveInput.x >0)
             {
                 localScale.x = 8f;
+                playerATK.shurikenSpeed = x;                
                 transform.localScale = localScale;
             }
 

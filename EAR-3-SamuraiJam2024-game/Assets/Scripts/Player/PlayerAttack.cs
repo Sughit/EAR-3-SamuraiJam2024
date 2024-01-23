@@ -9,8 +9,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] float attackRate, attackHeavyRate;
     [SerializeField] LayerMask enemyLayer;
-    bool canAttack=true;
+    bool canAttack=true, canShuriken = true, isAttacking = false;
     Animator anim;
+    public GameObject shurikenPrefab;
+    public float shurikenSpeed = 20f;
+    public float shurikenRate = 1f;
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -20,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
+            isAttacking = true;
             canAttack=false;
             Debug.Log("Attack");
             anim.SetTrigger("atacL");
@@ -28,11 +32,34 @@ public class PlayerAttack : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1) && canAttack)
         {
+            isAttacking = true;
             canAttack=false;
             Debug.Log("AttackHeavy");
             anim.SetTrigger("atacH");
             GetComponent<Movement>().speed = 0.5f;
         }
+        if(Input.GetKeyDown(KeyCode.Q) && canShuriken && !isAttacking)
+        {   
+            canShuriken = false;
+            anim.SetTrigger("shuriken");
+            GetComponent<Movement>().speed = 4f;
+            ShootShurikens(0);
+            ShootShurikens(7);
+            ShootShurikens(-7);
+            Invoke("ResetShuriken", shurikenRate);
+        }
+    }
+
+    void ShootShurikens(float y)
+    {
+        var shuriken = Instantiate(shurikenPrefab);
+        shuriken.transform.position = new Vector2(attackPoint.position.x, attackPoint.position.y);
+        shuriken.transform.rotation = attackPoint.rotation;
+        shuriken.GetComponent<Rigidbody2D>().velocity = new Vector2(shurikenSpeed, y);  
+    }
+    public void ResetShuriken()
+    {
+        canShuriken = true;
     }
 
     public void ResetAttack()
@@ -46,6 +73,11 @@ public class PlayerAttack : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     public void ResetSpeed()
+    {
+        GetComponent<Movement>().speed = 8f;
+        isAttacking = false;
+    }
+    public void ResetSpeedShuriken()
     {
         GetComponent<Movement>().speed = 8f;
     }

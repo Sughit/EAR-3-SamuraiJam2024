@@ -15,7 +15,6 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer sprite;
     public GameObject[] taieturi;
     public int x;
-    public GameObject taieturiP;
     void Awake()
     {
         health = maxHealth;

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: takeDamage
+  m_Name: shurikenThrow
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.449, y: 0.365, z: 0}
+        value: {x: 0.259, y: -0.069, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -36,9 +36,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -1840966977, guid: 989426edc7043a2479cdcc1bef8462fc, type: 3}
+      value: {fileID: -1601892774, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
+    - time: 0.06666667
+      value: {fileID: -1168613673, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
+    - time: 0.13333334
+      value: {fileID: -1096850303, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
     - time: 0.2
-      value: {fileID: -1840966977, guid: 989426edc7043a2479cdcc1bef8462fc, type: 3}
+      value: {fileID: -1960849016, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -65,8 +69,10 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: -1840966977, guid: 989426edc7043a2479cdcc1bef8462fc, type: 3}
-    - {fileID: -1840966977, guid: 989426edc7043a2479cdcc1bef8462fc, type: 3}
+    - {fileID: -1601892774, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
+    - {fileID: -1168613673, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
+    - {fileID: -1096850303, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
+    - {fileID: -1960849016, guid: 2fc197f884cb3a14d8681f8b8d03812e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -93,7 +99,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.449
+        value: 0.259
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -112,7 +118,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.365
+        value: -0.069
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -150,9 +156,9 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.2
-    functionName: ResetSpeed
+    functionName: ResetSpeedShuriken
     data: 
-    objectReferenceParameter: {fileID: 11500000, guid: 27489c803bf819f43803cd74fee9d172, type: 3}
+    objectReferenceParameter: {fileID: 11500000, guid: bf62bd0bf3513b3449439c02df5934df, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
