@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject shurikenPrefab;
     public float shurikenSpeed = 20f;
     public float shurikenRate = 1f;
+    public static bool canShurikenAttack;
     Movement movement;
     void Awake()
     {
@@ -25,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(GetComponentInParent<OpenSkillTree>().skillGO.activeSelf) canAttack=false;
         else canAttack=true;
-        
+
         if(Input.GetMouseButtonDown(0) && canAttack)
         {
             isAttacking = true;
@@ -43,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("atacH");
             GetComponent<Movement>().speed = 0.5f;
         }
-        if(Input.GetKeyDown(KeyCode.Q) && canShuriken && !isAttacking && !movement.isDashing)
+        if(Input.GetKeyDown(KeyCode.Q) && canShuriken && !isAttacking && !movement.isDashing && canShurikenAttack)
         {   
             canShuriken = false;
             anim.SetTrigger("shuriken");
