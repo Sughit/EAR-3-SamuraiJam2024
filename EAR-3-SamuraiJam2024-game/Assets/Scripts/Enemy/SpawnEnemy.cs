@@ -84,7 +84,7 @@ public class SpawnEnemy : MonoBehaviour
         //  -> if we have no points left, leave the loop
  
         List<GameObject> generatedEnemies = new List<GameObject>();
-        while(waveValue>0 && generatedEnemies.Count <50)
+        for(int i=0; i<50 && waveValue>0; i++)
         {
             int randEnemyId = Random.Range(0, enemies.Count);
             int randEnemyCost = enemies[randEnemyId].cost;
