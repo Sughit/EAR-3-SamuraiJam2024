@@ -42,11 +42,12 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         transition.SetTrigger("start");
-        Invoke("GameReady", 0.55f);
+        StartCoroutine(GameReady());
     }
 
-    void GameReady()
+    IEnumerator GameReady()
     {
+        yield return new WaitForSeconds(0.6f);
         canStartText.SetActive(false);
         transition.SetTrigger("end");
         bg.gameObject.SetActive(true);
@@ -59,11 +60,12 @@ public class GameManager : MonoBehaviour
     {
         gameStarted=false;
         transition.SetTrigger("start");
-        Invoke("GameUnready", 0.55f);
+        StartCoroutine(GameUnready());
     }
 
-    void GameUnready()
+    IEnumerator GameUnready()
     {
+        yield return new WaitForSeconds(.6f);
         transition.SetTrigger("end");
         bg.gameObject.SetActive(false);
         player.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
