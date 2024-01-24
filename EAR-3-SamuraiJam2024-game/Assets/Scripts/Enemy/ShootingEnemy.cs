@@ -20,13 +20,13 @@ public class ShootingEnemy : MonoBehaviour
 
     void Update()
     {
-        if(Time.time > nextShotTime && canShoot)
+        if(Time.time > nextShotTime && canShoot && !PlayerHealth.isDead)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
             nextShotTime = Time.time + timeBetweenShots;
         }
 
-        if(Vector2.Distance(transform.position, target.position) < minDis)
+        if(Vector2.Distance(transform.position, target.position) < minDis && !PlayerHealth.isDead)
         {
             canShoot = false;
             transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);

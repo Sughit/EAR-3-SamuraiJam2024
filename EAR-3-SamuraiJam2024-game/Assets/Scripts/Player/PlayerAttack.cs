@@ -9,7 +9,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] float attackRate, attackHeavyRate;
     [SerializeField] LayerMask enemyLayer;
-    bool canAttack=true, canShuriken = true, isAttacking = false;
+    bool isAttacking = false;
+    public bool canAttack = true, canShuriken = true;
     Animator anim;
     public GameObject shurikenPrefab;
     public float shurikenSpeed = 20f;
@@ -27,7 +28,7 @@ public class PlayerAttack : MonoBehaviour
         if(GetComponentInParent<OpenSkillTree>().skillGO.activeSelf) canAttack=false;
         else canAttack=true;
 
-        if(Input.GetMouseButtonDown(0) && canAttack)
+        if(Input.GetMouseButtonDown(0) && canAttack && !isAttacking)
         {
             isAttacking = true;
             canAttack=false;
@@ -36,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
             GetComponent<Movement>().speed = 0.5f;
         }
 
-        if(Input.GetMouseButtonDown(1) && canAttack)
+        if(Input.GetMouseButtonDown(1) && canAttack && !isAttacking)
         {
             isAttacking = true;
             canAttack=false;

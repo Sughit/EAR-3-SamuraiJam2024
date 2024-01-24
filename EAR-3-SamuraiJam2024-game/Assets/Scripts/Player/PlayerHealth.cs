@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Animator anim;
     public PlayerAttack playerATK;
     public Movement movement;
-    public static bool canBeHit = true;
+    public static bool canBeHit = true, isDead;
     Rigidbody2D rb;
     float hurtForce = 60f;
     public Vector3 direction, relative;
@@ -50,7 +50,14 @@ public class PlayerHealth : MonoBehaviour
     {
         if(health <= 0)
         {
+            isDead = true;
+            anim.SetTrigger("death");
             Debug.Log("mort");
+
+            canBeHit = false;
+            playerATK.canAttack = false;
+            playerATK.canShuriken = false;
+            rb.velocity = Vector2.zero;
         }
     }
     IEnumerator ColorChange()

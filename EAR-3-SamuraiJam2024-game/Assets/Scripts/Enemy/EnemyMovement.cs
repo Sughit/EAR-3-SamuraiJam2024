@@ -18,13 +18,13 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, target.position) > minDis)
+        if(Vector2.Distance(transform.position, target.position) > minDis && !PlayerHealth.isDead)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         else
         {
-            if(currentTimeToAttack<=0) 
+            if(currentTimeToAttack<=0 && !PlayerHealth.isDead) 
             {
                 currentTimeToAttack = timeToAttack;
                 Attack();

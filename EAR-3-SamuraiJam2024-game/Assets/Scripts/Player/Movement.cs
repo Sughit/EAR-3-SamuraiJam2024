@@ -33,16 +33,18 @@ public class Movement : MonoBehaviour
 
         moveInput.Normalize();
 
-        rb.velocity = moveInput * speed;
+        if(!PlayerHealth.isDead)
+            rb.velocity = moveInput * speed;
+
         Vector3 localScale = transform.localScale;
 
-        if(moveInput.x < 0)
+        if(moveInput.x < 0 && !PlayerHealth.isDead)
             {
                 localScale.x = -8f;
                 playerATK.shurikenSpeed = -x;
                 transform.localScale = localScale;
             }
-        else if (moveInput.x >0)
+        else if (moveInput.x >0 && !PlayerHealth.isDead)
             {
                 localScale.x = 8f;
                 playerATK.shurikenSpeed = x;                
