@@ -177,7 +177,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.2
-    functionName: Sunet
+    functionName: SunetAtac
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -168,3 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24afd3be7c8bdad48b5c2565737ed411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  shurikenHit: {fileID: 3946834603677684879, guid: 88002b25e4e3a924b9ac1b093369ccbe, type: 3}

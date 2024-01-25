@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShurikenScript : MonoBehaviour
 {
     public float damage = 5f;
+    public GameObject shurikenHit;
     void Awake()
     {
         Destroy(gameObject, 3f);
@@ -16,7 +17,10 @@ public class ShurikenScript : MonoBehaviour
         {
             Destroy(gameObject);
             if(other.gameObject.tag == "Enemy")
+            {
+                Instantiate(shurikenHit);
                 other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            }
         }
     }
 }

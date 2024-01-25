@@ -2180,5 +2180,9 @@ PrefabInstance:
       propertyPath: slashHollow
       value: 
       objectReference: {fileID: 3946834603677684879, guid: 06dacda86e5de8a4b80799830fd1c016, type: 3}
+    - target: {fileID: 5610118351332006540, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: sunetShuriken
+      value: 
+      objectReference: {fileID: 3946834603677684879, guid: 6c1108de40a527749b1c09e5f51f1625, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}

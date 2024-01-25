@@ -17,7 +17,7 @@ public class PlayerAttack : MonoBehaviour
     public float shurikenRate = 1f;
     public static bool canShurikenAttack, can2ShurikenAttack, can3ShurikenAttack;
     Movement movement;
-    public GameObject slashHit, slashHollow;
+    public GameObject slashHit, slashHollow, sunetShuriken;
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -48,6 +48,7 @@ public class PlayerAttack : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Q) && canShuriken && !isAttacking && !movement.isDashing && canShurikenAttack)
         {   
+            SunetShurinken();
             canShuriken = false;
             anim.SetTrigger("shuriken");
             GetComponent<Movement>().speed = 4f;
@@ -100,7 +101,12 @@ public class PlayerAttack : MonoBehaviour
         GetComponent<Movement>().speed = 8f;
     }
 
-    void Sunet()
+    void SunetShurinken()
+    {
+        Instantiate(sunetShuriken);
+    }
+
+    void SunetAtac()
     {
         var slashHollowVar = Instantiate(slashHollow);
         foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
