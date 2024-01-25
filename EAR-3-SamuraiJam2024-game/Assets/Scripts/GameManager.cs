@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         gameStarted=false;
         transition.SetTrigger("start");
+        Blood.instance.DeleteBlood();
         Sunet();
         StartCoroutine(GameUnready());
     }

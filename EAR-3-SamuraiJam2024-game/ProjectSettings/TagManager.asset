@@ -8,6 +8,7 @@ TagManager:
   - GameManager
   - TaieturiPlayer
   - Shuriken
+  - Blood
   layers:
   - Default
   - TransparentFX

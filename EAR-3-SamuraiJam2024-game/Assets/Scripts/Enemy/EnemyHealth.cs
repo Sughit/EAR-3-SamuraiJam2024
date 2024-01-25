@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        Blood.instance.SpawnBlood();
     }
 
     void Update()
