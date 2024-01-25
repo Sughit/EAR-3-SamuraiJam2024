@@ -990,7 +990,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 715938033, guid: 3bc93adde9cad1d4d9faec725a3376a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1061,9 +1061,14 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  canAttack: 1
+  canShuriken: 1
   shurikenPrefab: {fileID: 8167253617679721084, guid: 827f758bd60f8fb4ca4730972b15e944, type: 3}
   shurikenSpeed: 20
   shurikenRate: 1
+  slashHit: {fileID: 3946834603677684879, guid: e9ffa3abc9fd97a4199fda72905c030f, type: 3}
+  slashHollow: {fileID: 3946834603677684879, guid: 06dacda86e5de8a4b80799830fd1c016, type: 3}
+  sunetShuriken: {fileID: 3946834603677684879, guid: 6c1108de40a527749b1c09e5f51f1625, type: 3}
 --- !u!1 &5970772695239669862
 GameObject:
   m_ObjectHideFlags: 0
