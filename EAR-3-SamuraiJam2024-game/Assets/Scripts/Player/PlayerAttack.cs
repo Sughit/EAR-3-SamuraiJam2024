@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     public float shurikenRate = 1f;
     public static bool canShurikenAttack, can2ShurikenAttack, can3ShurikenAttack;
     Movement movement;
+    public GameObject slashHit, slashHollow;
     void Awake()
     {
         anim = GetComponent<Animator>();
@@ -97,6 +98,16 @@ public class PlayerAttack : MonoBehaviour
     public void ResetSpeedShuriken()
     {
         GetComponent<Movement>().speed = 8f;
+    }
+
+    void Sunet()
+    {
+        var slashHollowVar = Instantiate(slashHollow);
+        foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
+            {
+                Destroy(slashHollowVar);
+                var slashHitVar = Instantiate(slashHit);
+            }
     }
 
     void AttackH()

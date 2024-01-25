@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] Canvas bg;
     bool canStart;
+    public GameObject dayMusic, nightMusic, sunetUsa;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         if(!gameStarted)
         {
+            nightMusic.SetActive(false);
+            dayMusic.SetActive(true);
             if(canStart)
             {
                 canStartText.SetActive(true);
@@ -37,11 +40,21 @@ public class GameManager : MonoBehaviour
                 StartGame();
             }
         }
+        else
+        {
+            dayMusic.SetActive(false);
+            nightMusic.SetActive(true);
+        }
+    }
+    public void Sunet()
+    {
+        Instantiate(sunetUsa);
     }
 
     void StartGame()
     {
         transition.SetTrigger("start");
+        Sunet();
         StartCoroutine(GameReady());
     }
 
@@ -60,6 +73,7 @@ public class GameManager : MonoBehaviour
     {
         gameStarted=false;
         transition.SetTrigger("start");
+        Sunet();
         StartCoroutine(GameUnready());
     }
 
