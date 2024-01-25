@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject main, settings, butonSettings, sagetuta, sagetutaBack, butonBackSettings;
+    public GameObject main, settings, butonSettings, sagetuta, sagetutaBack, butonBackSettings, sunet;
     public Text backText, settingsText;
     public void PlayGame()
     {
@@ -31,5 +31,9 @@ public class MainMenuScript : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+    public void Sunet()
+    {
+        Instantiate(sunet);
     }
 }

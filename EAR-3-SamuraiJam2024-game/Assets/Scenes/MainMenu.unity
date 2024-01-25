@@ -531,6 +531,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 604399909}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 604399909}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -1493,6 +1505,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 604399909}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 604399909}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: Settings
         m_Mode: 1
         m_Arguments:
@@ -1939,6 +1963,7 @@ MonoBehaviour:
   sagetuta: {fileID: 444807419}
   sagetutaBack: {fileID: 527067600}
   butonBackSettings: {fileID: 791272092}
+  sunet: {fileID: 3946834603677684879, guid: a198bafb07eac6940ae89b15f6133245, type: 3}
   backText: {fileID: 913101960}
   settingsText: {fileID: 1308264251}
 --- !u!114 &604399910
@@ -2120,6 +2145,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 604399909}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 604399909}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: BackSettings
@@ -3587,6 +3624,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 604399909}
+        m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
+        m_MethodName: Sunet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 604399909}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
         m_MethodName: Quit

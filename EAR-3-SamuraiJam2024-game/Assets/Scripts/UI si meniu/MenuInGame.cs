@@ -8,7 +8,7 @@ public class MenuInGame : MonoBehaviour
 {
     public GameObject menu;
     public bool menuOpen = false;
-    public GameObject resumeButton, mainButton, quitButton, sagetuta;
+    public GameObject resumeButton, mainButton, quitButton, sagetuta, sunet;
     public Text resumeText;
     public void Quit()
     {
@@ -70,5 +70,9 @@ public class MenuInGame : MonoBehaviour
         yield return new WaitForSeconds(0.08f);
         resumeButton.SetActive(true);
         Time.timeScale = 0f;
+    }
+    public void Sunet()
+    {
+        Instantiate(sunet);
     }
 }
