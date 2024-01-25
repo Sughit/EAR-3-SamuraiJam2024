@@ -1964,6 +1964,8 @@ MonoBehaviour:
   sagetutaBack: {fileID: 527067600}
   butonBackSettings: {fileID: 791272092}
   sunet: {fileID: 3946834603677684879, guid: a198bafb07eac6940ae89b15f6133245, type: 3}
+  butonPlay: {fileID: 30550201}
+  butonQuit: {fileID: 104966245}
   backText: {fileID: 913101960}
   settingsText: {fileID: 1308264251}
 --- !u!114 &604399910

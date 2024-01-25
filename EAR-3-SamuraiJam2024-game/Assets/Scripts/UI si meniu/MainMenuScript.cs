@@ -6,8 +6,16 @@ using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject main, settings, butonSettings, sagetuta, sagetutaBack, butonBackSettings, sunet;
+    public GameObject main, settings, butonSettings, sagetuta, sagetutaBack, butonBackSettings, sunet, butonPlay, butonQuit;
     public Text backText, settingsText;
+    void Awake()
+    {
+        butonSettings.SetActive(false);
+        butonPlay.SetActive(false);
+        butonQuit.SetActive(false);
+
+        StartCoroutine(Butoane());
+    }
     public void PlayGame()
     {
         SceneManager.LoadScene("Main");
@@ -35,5 +43,13 @@ public class MainMenuScript : MonoBehaviour
     public void Sunet()
     {
         Instantiate(sunet);
+    }
+    IEnumerator Butoane()
+    {
+        butonQuit.SetActive(true);
+        yield return new WaitForSeconds(0.08f);
+        butonSettings.SetActive(true);
+        yield return new WaitForSeconds(0.08f);
+        butonPlay.SetActive(true);
     }
 }
