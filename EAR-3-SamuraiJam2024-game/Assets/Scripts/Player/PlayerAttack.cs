@@ -26,13 +26,14 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if(GetComponentInParent<OpenSkillTree>().skillGO.activeSelf) canAttack=false;
-        else canAttack=true;
+        if(Input.GetKeyDown(KeyCode.Tab))
+            if(GetComponentInParent<OpenSkillTree>().skillGO.activeSelf) canAttack=false;
+            else canAttack=true;
 
         if(Input.GetMouseButtonDown(0) && canAttack && !isAttacking)
         {
             isAttacking = true;
-            canAttack=false;
+            canAttack = false;
             Debug.Log("Attack");
             anim.SetTrigger("atacL");
             GetComponent<Movement>().speed = 0.5f;
@@ -41,7 +42,7 @@ public class PlayerAttack : MonoBehaviour
         if(Input.GetMouseButtonDown(1) && canAttack && !isAttacking)
         {
             isAttacking = true;
-            canAttack=false;
+            canAttack = false;
             Debug.Log("AttackHeavy");
             anim.SetTrigger("atacH");
             GetComponent<Movement>().speed = 0.5f;

@@ -10,7 +10,7 @@ public class MainMenuScript : MonoBehaviour
     public Text backText, settingsText;
     public void PlayGame()
     {
-         SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Main");
     }
     public void Settings()
     {

@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     Animator anim;
     PlayerAttack playerATK;
     float x;
+    public MenuInGame menu;
 
     void Start()
     {
@@ -38,13 +39,13 @@ public class Movement : MonoBehaviour
 
         Vector3 localScale = transform.localScale;
 
-        if(moveInput.x < 0 && !PlayerHealth.isDead)
+        if(moveInput.x < 0 && !PlayerHealth.isDead && !menu.menuOpen)
             {
                 localScale.x = -8f;
                 playerATK.shurikenSpeed = -x;
                 transform.localScale = localScale;
             }
-        else if (moveInput.x >0 && !PlayerHealth.isDead)
+        else if (moveInput.x >0 && !PlayerHealth.isDead && !menu.menuOpen)
             {
                 localScale.x = 8f;
                 playerATK.shurikenSpeed = x;                
