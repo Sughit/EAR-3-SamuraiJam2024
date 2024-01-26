@@ -56,6 +56,8 @@ public class SpawnEnemy : MonoBehaviour
             if(waveTimer<=0 && spawnedEnemies.Count <=0)
             {
                 GetComponent<GameManager>().EndGame();
+                if(currWave != 1) UnlockSkills.numSkillPoints += currWave/2;
+                else UnlockSkills.numSkillPoints += currWave;
                 currWave++;
                 Debug.Log(currWave);
             }

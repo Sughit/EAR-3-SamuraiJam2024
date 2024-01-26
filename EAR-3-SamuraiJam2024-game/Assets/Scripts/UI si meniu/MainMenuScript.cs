@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject main, settings, butonSettings, sagetuta, sagetutaBack, butonBackSettings, sunet, butonPlay, butonQuit;
     public Text backText, settingsText;
+    public Animator transition;
     void Awake()
     {
         butonSettings.SetActive(false);
@@ -18,6 +19,13 @@ public class MainMenuScript : MonoBehaviour
     }
     public void PlayGame()
     {
+        StartCoroutine(PlayGameCo());
+    }
+
+    IEnumerator PlayGameCo()
+    {
+        transition.SetTrigger("start");
+        yield return new WaitForSeconds(.5f);
         SceneManager.LoadScene("Main");
     }
     public void Settings()
