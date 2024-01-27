@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             if(other.gameObject.tag == "Player")
                 {
-                    other.GetComponent<PlayerHealth>().direction = transform.position - other.transform.position;
+                    PlayerHealth.meleeAttack = false;
                     other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
                 }
         }

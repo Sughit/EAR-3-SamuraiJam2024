@@ -52,7 +52,6 @@ public class Movement : MonoBehaviour
                 transform.localScale = localScale;
             }
 
-
         if(moveInput != Vector2.zero)
             anim.SetBool("mers", true);
         else

@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float timeToAttack;
     float currentTimeToAttack;
     [SerializeField] float damage;
+    float hurtForce = 60f;
 
     void Awake()
     {
@@ -35,7 +36,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Attack()
     {
-        target.GetComponent<PlayerHealth>().direction = (transform.position - target.transform.position) * 3f;
+        PlayerHealth.meleeAttack = true;
+        Vector3 direction = (transform.position - target.transform.position) * 3f;
+        Vector3 relative = target.transform.position - direction;
+        target.transform.position = Vector2.Lerp(target.transform.position, relative, Time.deltaTime * hurtForce);
         target.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 }

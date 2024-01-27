@@ -8,31 +8,35 @@ public class PlayerHealth : MonoBehaviour
     public Animator anim;
     public PlayerAttack playerATK;
     public Movement movement;
-    public static bool canBeHit = true, isDead;
+    public static bool canBeHit = true, isDead, meleeAttack;
     Rigidbody2D rb;
-    float hurtForce = 60f;
-    public Vector3 direction, relative;
     public SpriteRenderer sprite;
     public GameObject[] taieturi;
     public int x;
+    public GameObject swordHitSelf;
+    public GameObject projectileHitSelf;
     void Awake()
     {
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
     }
-    void Start()
-    {
-    }
 
     public void TakeDamage(float damage)
     {
-        relative = transform.position - direction;
-        
-        if(canBeHit)
+        if(canBeHit && meleeAttack)
         {
+            Instantiate(swordHitSelf);
             x = UnityEngine.Random.Range(0,8);
             taieturi[x].SetActive(true);
-            transform.position = Vector2.Lerp(transform.position, relative, Time.deltaTime * hurtForce);;
+            StartCoroutine(ColorChange());
+            health -= damage;
+            anim.SetTrigger("hurt");
+            movement.speed = 0.5f;
+            playerATK.ResetAttack();
+        }
+        else if(canBeHit)
+        {
+            Instantiate(projectileHitSelf);
             StartCoroutine(ColorChange());
             health -= damage;
             anim.SetTrigger("hurt");
