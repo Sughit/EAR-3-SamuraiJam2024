@@ -61,6 +61,11 @@ public class GameManager : MonoBehaviour
     IEnumerator GameReady()
     {
         yield return new WaitForSeconds(0.6f);
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
+        foreach(var tree in trees)
+        {
+            tree.GetComponent<MakeTreeDark>().Night();
+        }
         canStartText.SetActive(false);
         transition.SetTrigger("end");
         bg.gameObject.SetActive(true);
@@ -81,6 +86,11 @@ public class GameManager : MonoBehaviour
     IEnumerator GameUnready()
     {
         yield return new WaitForSeconds(.6f);
+        GameObject[] trees = GameObject.FindGameObjectsWithTag("Tree");
+        foreach(var tree in trees)
+        {
+            tree.GetComponent<MakeTreeDark>().Day();
+        }
         transition.SetTrigger("end");
         bg.gameObject.SetActive(false);
         player.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);

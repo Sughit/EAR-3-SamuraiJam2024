@@ -9,6 +9,7 @@ TagManager:
   - TaieturiPlayer
   - Shuriken
   - Blood
+  - Tree
   layers:
   - Default
   - TransparentFX
