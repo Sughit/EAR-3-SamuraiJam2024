@@ -18,8 +18,11 @@ public class ShurikenScript : MonoBehaviour
             Destroy(gameObject);
             if(other.gameObject.tag == "Enemy")
             {
-                Instantiate(shurikenHit);
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                if(!other.GetComponent<EnemyHealth>().isDead)
+                {
+                    Instantiate(shurikenHit);
+                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                }
             }
         }
     }

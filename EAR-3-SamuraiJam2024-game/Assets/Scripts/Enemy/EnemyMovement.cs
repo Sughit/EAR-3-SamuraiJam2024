@@ -7,34 +7,38 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float speed;
     public Transform target;
     [SerializeField] float minDis;
-    [SerializeField] float timeToAttack;
-    float currentTimeToAttack;
+    [SerializeField] public float timeToAttack;
+    [HideInInspector]public float currentTimeToAttack;
     [SerializeField] float damage;
     float hurtForce = 60f;
+    Animator anim;
+    EnemyHealth health;
 
     void Awake()
     {
+        health = GetComponent<EnemyHealth>();
+        anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
-        if(Vector2.Distance(transform.position, target.position) > minDis && !PlayerHealth.isDead)
+        if(Vector2.Distance(transform.position, target.position) > minDis && !PlayerHealth.isDead && !health.isDead)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         else
         {
-            if(currentTimeToAttack<=0 && !PlayerHealth.isDead) 
+            if(currentTimeToAttack<=0 && !PlayerHealth.isDead && !health.isDead) 
             {
+                anim.SetTrigger("atac");
                 currentTimeToAttack = timeToAttack;
-                Attack();
             }
             else currentTimeToAttack -= Time.deltaTime;
         }
     }
 
-    void Attack()
+    public void Attack()
     {
         PlayerHealth.meleeAttack = true;
         Vector3 direction = (transform.position - target.transform.position) * 3f;

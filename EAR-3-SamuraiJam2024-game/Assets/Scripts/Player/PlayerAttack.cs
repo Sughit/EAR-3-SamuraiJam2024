@@ -121,8 +121,11 @@ public class PlayerAttack : MonoBehaviour
     {
         foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
             {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
-                Debug.Log(other.gameObject.name);
+                if(!other.GetComponent<EnemyHealth>().isDead)
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+                    Debug.Log(other.gameObject.name);
+                }
             }
             Invoke("ResetAttack", attackHeavyRate);
     }
@@ -131,8 +134,11 @@ public class PlayerAttack : MonoBehaviour
     {
         foreach(Collider2D other in Physics2D.OverlapCircleAll(new Vector2(attackPoint.position.x, attackPoint.position.y), attackRange, enemyLayer))
             {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(5);
-                Debug.Log(other.gameObject.name);
+                if(!other.GetComponent<EnemyHealth>().isDead)
+                {
+                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+                    Debug.Log(other.gameObject.name);
+                }
             }
             Invoke("ResetAttack", attackRate);
     }

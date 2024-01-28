@@ -9,28 +9,37 @@ public class ShootingEnemy : MonoBehaviour
     [SerializeField] float minDis;
 
     [SerializeField] GameObject projectile;
-    [SerializeField] float timeBetweenShots;
-    float nextShotTime;
+    [SerializeField] public float timeBetweenShots;
+    [HideInInspector]public float nextShotTime;
     bool canShoot=true;
+    Animator anim;
+    EnemyHealth health;
 
     void Awake()
     {
+        health = GetComponent<EnemyHealth>();
+        anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     void Update()
     {
-        if(Time.time > nextShotTime && canShoot && !PlayerHealth.isDead)
+        if(Time.time > nextShotTime && canShoot && !PlayerHealth.isDead && !health.isDead)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);
+            anim.SetTrigger("atac");
             nextShotTime = Time.time + timeBetweenShots;
         }
 
-        if(Vector2.Distance(transform.position, target.position) < minDis && !PlayerHealth.isDead)
+        if(Vector2.Distance(transform.position, target.position) < minDis && !PlayerHealth.isDead && !health.isDead)
         {
             canShoot = false;
             transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
         }
         else canShoot = true;
+    }
+
+    public void Shoot()
+    {
+        Instantiate(projectile, transform.position, Quaternion.identity);
     }
 }
