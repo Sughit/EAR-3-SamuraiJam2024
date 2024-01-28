@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     float hurtForce = 60f;
     Animator anim;
     EnemyHealth health;
+    float oldPosition;
 
     void Awake()
     {
@@ -23,8 +24,13 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        Vector2 localScale = transform.localScale;
+
         if(Vector2.Distance(transform.position, target.position) > minDis && !PlayerHealth.isDead && !health.isDead)
         {
+            anim.SetBool("running", true);
+
+            currentTimeToAttack = timeToAttack;
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
         else
@@ -35,6 +41,19 @@ public class EnemyMovement : MonoBehaviour
                 currentTimeToAttack = timeToAttack;
             }
             else currentTimeToAttack -= Time.deltaTime;
+            
+            anim.SetBool("running", false);
+        }
+
+        if(gameObject.transform.position.x > oldPosition)
+        {
+            localScale.x = 8f;
+            transform.localScale = localScale;
+        }
+            if(gameObject.transform.position.x < oldPosition)
+        {
+            localScale.x = -8f;
+            transform.localScale = localScale;
         }
     }
 
@@ -45,5 +64,10 @@ public class EnemyMovement : MonoBehaviour
         Vector3 relative = target.transform.position - direction;
         target.transform.position = Vector2.Lerp(target.transform.position, relative, Time.deltaTime * hurtForce);
         target.GetComponent<PlayerHealth>().TakeDamage(damage);
+    }
+
+    void LateUpdate()
+    {
+	    oldPosition = transform.position.x;
     }
 }

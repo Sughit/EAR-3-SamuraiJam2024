@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8838978859147188207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: -3.43, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,6 +52,7 @@ MonoBehaviour:
   target: {fileID: 0}
   minDis: 1.6
   timeToAttack: 2
+  currentTimeToAttack: 0
   damage: 5
 --- !u!61 &8838978859147188194
 BoxCollider2D:
@@ -66,18 +67,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0021899194, y: -0.00029361248}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.14, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.14594701, y: 0.20466721}
   m_EdgeRadius: 0
 --- !u!114 &8838978859147188195
 MonoBehaviour:
@@ -91,8 +92,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27408b52469ba914f92659f1d18591f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: melee
   health: 0
   maxHealth: 20
+  isDead: 0
 --- !u!95 &3776475903566398543
 Animator:
   serializedVersion: 5
@@ -155,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1168688488, guid: c2ca8c53c375908488198f7a6d894156, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
