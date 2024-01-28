@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootingEnemy : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
     public Transform target;
     [SerializeField] float minDis;
 
@@ -30,8 +30,8 @@ public class ShootingEnemy : MonoBehaviour
 
         if(Time.time > nextShotTime && canShoot && !PlayerHealth.isDead && !health.isDead)
         {
-            anim.SetTrigger("atac");
             nextShotTime = Time.time + timeBetweenShots;
+            anim.SetTrigger("atac");
         }
 
         if(Vector2.Distance(transform.position, target.position) < minDis && !PlayerHealth.isDead && !health.isDead)

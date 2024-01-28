@@ -13,8 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer sprite;
     public GameObject[] taieturi;
     public int x;
-    public GameObject swordHitSelf;
-    public GameObject projectileHitSelf;
+    public GameObject swordHitSelf, projectileHitSelf, endMenu;
     void Awake()
     {
         health = maxHealth;
@@ -57,6 +56,8 @@ public class PlayerHealth : MonoBehaviour
             isDead = true;
             anim.SetTrigger("death");
             Debug.Log("mort");
+
+            endMenu.SetActive(true);
 
             canBeHit = false;
             playerATK.canAttack = false;

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Canvas bg;
     bool canStart;
     public GameObject dayMusic, nightMusic, sunetUsa;
+    public Text text;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
             dayMusic.SetActive(false);
             nightMusic.SetActive(true);
         }
+
+        text.text = EnemyHealth.kills + " mongols";
     }
     public void Sunet()
     {

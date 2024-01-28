@@ -43,6 +43,11 @@ public class MainMenuScript : MonoBehaviour
         butonBackSettings.transform.localScale = new Vector2(1f, 1f);
         sagetutaBack.SetActive(false);
         backText.color = new Color(0.1960784f, 0.1960784f, 0.1960784f, 1);
+        butonSettings.SetActive(false);
+        butonPlay.SetActive(false);
+        butonQuit.SetActive(false);
+
+        StartCoroutine(Butoane());
     }
     public void Quit()
     {

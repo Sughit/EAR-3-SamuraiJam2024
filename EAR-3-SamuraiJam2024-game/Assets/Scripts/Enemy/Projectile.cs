@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
                 }
         }
     }
-
+    
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);

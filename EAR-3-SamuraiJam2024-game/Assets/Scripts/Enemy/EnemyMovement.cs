@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] float speed;
+    [SerializeField] public float speed;
     public Transform target;
     [SerializeField] float minDis;
     [SerializeField] public float timeToAttack;
@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
                 currentTimeToAttack = timeToAttack;
             }
             else currentTimeToAttack -= Time.deltaTime;
-            
+
             anim.SetBool("running", false);
         }
 
