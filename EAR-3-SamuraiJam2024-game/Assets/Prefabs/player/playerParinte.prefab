@@ -202,9 +202,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4078827984105617875}
-        m_TargetAssemblyTypeName: UnlockSkills, Assembly-CSharp
-        m_MethodName: UnlockSkill
+      - m_Target: {fileID: 5450187560885805942}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+        m_MethodName: Shuriken3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -214,9 +214,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5450187560885805942}
-        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
-        m_MethodName: Shuriken3
+      - m_Target: {fileID: 4078827984105617875}
+        m_TargetAssemblyTypeName: UnlockSkills, Assembly-CSharp
+        m_MethodName: UnlockSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1372,8 +1372,6 @@ MonoBehaviour:
   anim: {fileID: 5610118351332006538}
   playerATK: {fileID: 5610118351332006540}
   movement: {fileID: 5610118351332006543}
-  direction: {x: 0, y: 0, z: 0}
-  relative: {x: 0, y: 0, z: 0}
   sprite: {fileID: 5610118351332006537}
   taieturi:
   - {fileID: 2235851171650883273}
@@ -1386,6 +1384,8 @@ MonoBehaviour:
   - {fileID: 2235851169945226012}
   - {fileID: 2235851171278719045}
   x: 0
+  swordHitSelf: {fileID: 0}
+  projectileHitSelf: {fileID: 0}
 --- !u!114 &3300966481630360880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1525,9 +1525,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8598217561653499064}
-        m_TargetAssemblyTypeName: UnlockSkills, Assembly-CSharp
-        m_MethodName: UnlockSkill
+      - m_Target: {fileID: 5367324064864071852}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+        m_MethodName: Shuriken2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1537,9 +1537,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5367324064864071852}
-        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
-        m_MethodName: Shuriken2
+      - m_Target: {fileID: 8598217561653499064}
+        m_TargetAssemblyTypeName: UnlockSkills, Assembly-CSharp
+        m_MethodName: UnlockSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2510,9 +2510,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 217189728536150457}
-        m_TargetAssemblyTypeName: UnlockSkills, Assembly-CSharp
-        m_MethodName: UnlockSkill
+      - m_Target: {fileID: 5126955578744085324}
+        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
+        m_MethodName: Shuriken1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2522,9 +2522,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5126955578744085324}
-        m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
-        m_MethodName: Shuriken1
+      - m_Target: {fileID: 217189728536150457}
+        m_TargetAssemblyTypeName: UnlockSkills, Assembly-CSharp
+        m_MethodName: UnlockSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

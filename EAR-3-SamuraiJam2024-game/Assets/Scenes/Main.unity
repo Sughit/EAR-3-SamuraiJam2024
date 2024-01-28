@@ -3547,6 +3547,30 @@ PrefabInstance:
       propertyPath: projectileHitSelf
       value: 
       objectReference: {fileID: 3946834603677684879, guid: 9d701c712255fdd478dfab4772bb79ce, type: 3}
+    - target: {fileID: 134617291628080280, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5610118352399719900}
+    - target: {fileID: 134617291628080280, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5610118352399719901}
+    - target: {fileID: 134617291628080280, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shuriken1
+      objectReference: {fileID: 0}
+    - target: {fileID: 134617291628080280, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UnlockSkill
+      objectReference: {fileID: 0}
+    - target: {fileID: 134617291628080280, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SkillManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 134617291628080280, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnlockSkills, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5610118351155535982, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3637,3 +3661,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+--- !u!114 &5610118352399719900 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5126955578744085324, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+  m_PrefabInstance: {fileID: 5610118352399719899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5610118352399719901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 217189728536150457, guid: 8bc589060350a6045841d61dc4cfbe0a, type: 3}
+  m_PrefabInstance: {fileID: 5610118352399719899}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a27d0a555b0704db2cd78307d8dc07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

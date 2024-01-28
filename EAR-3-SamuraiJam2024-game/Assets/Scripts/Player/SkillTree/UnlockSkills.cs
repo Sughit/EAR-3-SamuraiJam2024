@@ -13,7 +13,7 @@ public class UnlockSkills : MonoBehaviour
     public Text costText;
     public Text skillPointsText;
 
-    public static int numSkillPoints=0;
+    public static int numSkillPoints=10;
 
     void Start()
     {
