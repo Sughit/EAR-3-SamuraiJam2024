@@ -24,6 +24,38 @@ public class SkillManager : MonoBehaviour
         }
     }
 
+    public void HeavyRate()
+    {
+        if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
+        {
+            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().attackHeavyRate = 1.4f;
+        }
+    }
+
+    public void LightRate()
+    {
+        if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
+        {
+            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().attackRate = 0.3f;
+        }
+    }
+
+    public void HeavyDamage()
+    {
+        if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
+        {
+            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().heavyDamage = 10f;
+        }
+    }
+
+    public void LightDamage()
+    {
+        if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
+        {
+            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().lightDamage = 5f;
+        }
+    }
+
     public void Shuriken1()
     {
         if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)

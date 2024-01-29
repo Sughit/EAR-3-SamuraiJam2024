@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         transition.SetTrigger("end");
         bg.gameObject.SetActive(true);
         player.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 255);
+        GetComponentInChildren<SpriteRenderer>().color = new Color(0, 0, 0, 255);
         GetComponent<SpawnEnemy>().GenerateWave();
         gameStarted=true;
     }
@@ -99,5 +100,6 @@ public class GameManager : MonoBehaviour
         transition.SetTrigger("end");
         bg.gameObject.SetActive(false);
         player.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+        GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255, 255);
     }
 }

@@ -6,8 +6,8 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange;
-    [SerializeField] float lightDamage, heavyDamage;
-    [SerializeField] float attackRate, attackHeavyRate;
+    public float lightDamage, heavyDamage;
+    public float attackRate, attackHeavyRate;
     [SerializeField] LayerMask enemyLayer;
     [HideInInspector]public bool isAttacking = false;
     public bool canAttack = true, canShuriken = true;
