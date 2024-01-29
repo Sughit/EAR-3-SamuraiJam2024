@@ -6,6 +6,6 @@ public class SoundScript : MonoBehaviour
 {
     void Awake()
     {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
     }
 }
