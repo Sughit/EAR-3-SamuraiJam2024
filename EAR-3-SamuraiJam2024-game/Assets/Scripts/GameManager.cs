@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] Canvas bg;
     bool canStart;
-    public GameObject dayMusic, nightMusic, sunetUsa;
+    public GameObject dayMusic, nightMusic, sunetUsa, sunetGong;
     public Text text;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     void StartGame()
     {
         transition.SetTrigger("start");
-        Sunet();
+        Instantiate(sunetGong);
         StartCoroutine(GameReady());
     }
 
