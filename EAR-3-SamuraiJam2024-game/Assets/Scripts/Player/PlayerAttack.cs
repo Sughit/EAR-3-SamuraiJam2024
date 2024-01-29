@@ -6,10 +6,10 @@ public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange;
-    [SerializeField] float damage;
+    [SerializeField] float lightDamage, heavyDamage;
     [SerializeField] float attackRate, attackHeavyRate;
     [SerializeField] LayerMask enemyLayer;
-    bool isAttacking = false;
+    [HideInInspector]public bool isAttacking = false;
     public bool canAttack = true, canShuriken = true;
     Animator anim;
     public GameObject shurikenPrefab;
@@ -123,7 +123,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if(!other.GetComponent<EnemyHealth>().isDead)
                 {
-                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(heavyDamage);
                     Debug.Log(other.gameObject.name);
                 }
             }
@@ -136,7 +136,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if(!other.GetComponent<EnemyHealth>().isDead)
                 {
-                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(10);
+                    other.gameObject.GetComponent<EnemyHealth>().TakeDamage(lightDamage);
                     Debug.Log(other.gameObject.name);
                 }
             }

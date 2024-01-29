@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
             anim.SetBool("mers", false);
         
 
-        if(Input.GetKeyDown(KeyCode.Space) && canDash && moveInput != Vector2.zero)
+        if(Input.GetKeyDown(KeyCode.Space) && canDash && moveInput != Vector2.zero && !playerATK.isAttacking)
         {
             StartCoroutine(Dash());
         }

@@ -46,9 +46,11 @@ public class GameManager : MonoBehaviour
             dayMusic.SetActive(false);
             nightMusic.SetActive(true);
         }
-
-        text.text = EnemyHealth.kills + " mongols";
-    }
+        if(EnemyHealth.kills == 1)
+            text.text = EnemyHealth.kills + " mongol";
+        else
+            text.text = EnemyHealth.kills + " mongols";
+    }   
     public void Sunet()
     {
         Instantiate(sunetUsa);

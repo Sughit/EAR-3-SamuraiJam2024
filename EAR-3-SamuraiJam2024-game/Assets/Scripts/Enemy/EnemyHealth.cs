@@ -34,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
 
         anim.SetTrigger("hit");
         
+        
         if(type == "melee")
         {
             GetComponent<EnemyMovement>().currentTimeToAttack = GetComponent<EnemyMovement>().timeToAttack;

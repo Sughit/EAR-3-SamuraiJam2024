@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
         rb = GetComponent<Rigidbody2D>();
+        isDead = false;
+        canBeHit = true;
     }
 
     public void TakeDamage(float damage)
@@ -57,13 +59,17 @@ public class PlayerHealth : MonoBehaviour
             anim.SetTrigger("death");
             Debug.Log("mort");
 
-            endMenu.SetActive(true);
+            Invoke("menu", 1f);
 
             canBeHit = false;
             playerATK.canAttack = false;
             playerATK.canShuriken = false;
-            rb.velocity = Vector2.zero;
+            //rb.velocity = Vector2.zero;
         }
+    }
+    void menu()
+    {
+        endMenu.SetActive(true);
     }
     IEnumerator ColorChange()
     {

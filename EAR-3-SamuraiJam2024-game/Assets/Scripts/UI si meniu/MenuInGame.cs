@@ -43,6 +43,7 @@ public class MenuInGame : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        EnemyHealth.kills = 0;
         SceneManager.LoadScene("MainMenu");
     }
     public void Resume()

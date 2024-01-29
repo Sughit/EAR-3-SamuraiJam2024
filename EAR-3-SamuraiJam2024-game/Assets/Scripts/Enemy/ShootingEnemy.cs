@@ -31,6 +31,7 @@ public class ShootingEnemy : MonoBehaviour
         if(Time.time > nextShotTime && canShoot && !PlayerHealth.isDead && !health.isDead)
         {
             nextShotTime = Time.time + timeBetweenShots;
+            speed = 0.5f;
             anim.SetTrigger("atac");
         }
 
@@ -60,18 +61,17 @@ public class ShootingEnemy : MonoBehaviour
             float rev= relative.x;
         }
         else 
-        {   
-            if(relative.x == 8f)
-            {
-                localScale.x = -8f;
-                transform.localScale = localScale;
-            }
-            else
-            {
-                localScale.x = 8f;
-                transform.localScale = localScale;
-            }
-
+        {
+            if(target.transform.position.x < transform.position.x)
+        {
+            localScale.x = -8f;
+            transform.localScale = localScale;
+        }
+        else
+        {
+            localScale.x = 8f;
+            transform.localScale = localScale;
+        }
             canShoot = true;
             anim.SetBool("running", false);
         }
@@ -85,5 +85,9 @@ public class ShootingEnemy : MonoBehaviour
     void LateUpdate()
     {
 	    oldPosition = transform.position.x;
+    }
+    public void ResetSpeedRanged()
+    {
+        speed = 5f;
     }
 }
