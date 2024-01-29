@@ -1041,6 +1041,7 @@ MonoBehaviour:
   dashDuration: 0.2
   dashCooldown: 1
   isDashing: 0
+  menu: {fileID: 0}
 --- !u!114 &5970772695084614085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,12 +1056,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackPoint: {fileID: 5970772695239669863}
   attackRange: 1.2
-  damage: 2
+  lightDamage: 0
+  heavyDamage: 0
   attackRate: 0.4
   attackHeavyRate: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
   canAttack: 1
   canShuriken: 1
   shurikenPrefab: {fileID: 8167253617679721084, guid: 827f758bd60f8fb4ca4730972b15e944, type: 3}

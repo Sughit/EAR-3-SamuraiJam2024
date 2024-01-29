@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SkillManager : MonoBehaviour
 {
+    public GameObject player;
+    
     public void Heal()
     {
         if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
@@ -28,7 +30,7 @@ public class SkillManager : MonoBehaviour
     {
         if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
         {
-            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().attackHeavyRate = 1.4f;
+            player.GetComponent<PlayerAttack>().attackHeavyRate = 1.4f;
         }
     }
 
@@ -36,7 +38,7 @@ public class SkillManager : MonoBehaviour
     {
         if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
         {
-            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().attackRate = 0.3f;
+            player.GetComponent<PlayerAttack>().attackRate = 0.3f;
         }
     }
 
@@ -44,7 +46,7 @@ public class SkillManager : MonoBehaviour
     {
         if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
         {
-            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().heavyDamage = 10f;
+            player.GetComponent<PlayerAttack>().heavyDamage = 10f;
         }
     }
 
@@ -52,7 +54,7 @@ public class SkillManager : MonoBehaviour
     {
         if(GetComponent<UnlockSkills>().cost <= UnlockSkills.numSkillPoints)
         {
-            GameObject.FindWithTag("Player").GetComponent<PlayerAttack>().lightDamage = 5f;
+            player.GetComponent<PlayerAttack>().lightDamage = 5f;
         }
     }
 

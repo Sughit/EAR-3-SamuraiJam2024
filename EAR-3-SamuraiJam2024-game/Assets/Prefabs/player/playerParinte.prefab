@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &622351192804769061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -800,6 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &6435915254646700352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1030,7 +1032,7 @@ MonoBehaviour:
   - {fileID: 1704310507232985472}
   usedBtnImage: {fileID: 8002806916656777999}
   cost: 3
-  costText: {fileID: 3040751231760861358}
+  costText: {fileID: 3348133234022174709}
   skillPointsText: {fileID: 3902270338375070366}
 --- !u!114 &4103175161259179785
 MonoBehaviour:
@@ -1044,6 +1046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5610118351332006539}
 --- !u!114 &5312033824450566169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1064,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8952511920809389444}
+        - m_Target: {fileID: 1171444011864450001}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -1077,7 +1080,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8952511920809389444}
+        - m_Target: {fileID: 1171444011864450001}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -1374,7 +1377,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7584953003924954654}
         m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
-        m_MethodName: LightRate
+        m_MethodName: HeavyDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1412,7 +1415,7 @@ MonoBehaviour:
   inactives: []
   usedBtnImage: {fileID: 6935408927650615844}
   cost: 5
-  costText: {fileID: 3040751231760861358}
+  costText: {fileID: 3461675992257815884}
   skillPointsText: {fileID: 3902270338375070366}
 --- !u!114 &7584953003924954654
 MonoBehaviour:
@@ -1426,6 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5610118351332006539}
 --- !u!114 &267653812894598626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1443,7 +1447,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8952511920809389444}
+        - m_Target: {fileID: 3066156704061160787}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -1459,7 +1463,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8952511920809389444}
+        - m_Target: {fileID: 3066156704061160787}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -1750,7 +1754,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8686769662152465509}
         m_TargetAssemblyTypeName: SkillManager, Assembly-CSharp
-        m_MethodName: LightRate
+        m_MethodName: LightDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1790,7 +1794,7 @@ MonoBehaviour:
   - {fileID: 1736101242882005514}
   usedBtnImage: {fileID: 2568045234049714836}
   cost: 5
-  costText: {fileID: 3040751231760861358}
+  costText: {fileID: 4755096076844526843}
   skillPointsText: {fileID: 3902270338375070366}
 --- !u!114 &8686769662152465509
 MonoBehaviour:
@@ -1804,6 +1808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5610118351332006539}
 --- !u!114 &2176203964591737528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1821,7 +1826,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8952511920809389444}
+        - m_Target: {fileID: 2821407632008109305}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -1837,7 +1842,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 8952511920809389444}
+        - m_Target: {fileID: 2821407632008109305}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -3053,6 +3058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5610118351332006539}
 --- !u!114 &954082264650340645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4184,6 +4190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &910978223980909617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5983,6 +5990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f11a46a7c5e8894fa48340035c35d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &5809735793653164533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6326,6 +6334,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5970772695084614082, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970772695084614085, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5970772695084614085, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
       propertyPath: heavyDamage
       value: 9
@@ -6416,12 +6432,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5970772695084614083, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
   m_PrefabInstance: {fileID: 2235851169926060873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5610118351332006539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5970772695084614082, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
+  m_PrefabInstance: {fileID: 2235851169926060873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5610118351332006540 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5970772695084614085, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
   m_PrefabInstance: {fileID: 2235851169926060873}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5610118351332006539}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf62bd0bf3513b3449439c02df5934df, type: 3}
@@ -6432,7 +6453,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5970772695084614086, guid: 5d5bd767686d89a47bab498ab28e72dc, type: 3}
   m_PrefabInstance: {fileID: 2235851169926060873}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5610118351332006539}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ed3f48a359eddf49a2343c9e8fd3385, type: 3}
