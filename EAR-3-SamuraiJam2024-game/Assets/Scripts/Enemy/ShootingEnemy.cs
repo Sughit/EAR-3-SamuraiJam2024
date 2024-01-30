@@ -16,9 +16,13 @@ public class ShootingEnemy : MonoBehaviour
     EnemyHealth health;
     float oldPosition;
     Vector2 relative;
+    Rigidbody2D rb;
+    Vector2 localScale;
 
     void Awake()
     {
+        localScale = transform.localScale;
+        rb = GetComponent<Rigidbody2D>();
         health = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -26,7 +30,6 @@ public class ShootingEnemy : MonoBehaviour
 
     void Update()
     {
-        Vector2 localScale = transform.localScale;
 
         if(Time.time > nextShotTime && canShoot && !PlayerHealth.isDead && !health.isDead)
         {
@@ -42,7 +45,52 @@ public class ShootingEnemy : MonoBehaviour
             canShoot = false;
             anim.SetBool("running", true);
 
-            transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime); 
+            
+
+            if(gameObject.transform.position.x > oldPosition)
+            {
+                localScale.x = 8f;
+                relative.x = 8f;
+                transform.localScale = localScale;
+            }
+
+            if(gameObject.transform.position.x < oldPosition)
+            {
+                localScale.x = -8f;
+                relative.x = -8f;
+                transform.localScale = localScale;
+            }
+
+            float rev= relative.x;
+        }
+        else 
+        {
+            if(target.transform.position.x < transform.position.x)
+        {
+            localScale.x = -8f;
+            transform.localScale = localScale;
+        }
+        else
+        {
+            localScale.x = 8f;
+            transform.localScale = localScale;
+        }
+            canShoot = true;
+            anim.SetBool("running", false);
+        }
+    }
+    void FixedUpdate()
+    {
+        if(Vector2.Distance(transform.position, target.position) < minDis && !PlayerHealth.isDead && !health.isDead)
+        {
+            nextShotTime = timeBetweenShots;
+
+            canShoot = false;
+            anim.SetBool("running", true);
+
+            //transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime); 
+            rb.MovePosition(Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime));
 
             if(gameObject.transform.position.x > oldPosition)
             {

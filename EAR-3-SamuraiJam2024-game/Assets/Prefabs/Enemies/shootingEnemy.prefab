@@ -733,6 +733,7 @@ GameObject:
   - component: {fileID: 5905552652065533686}
   - component: {fileID: 7145591609166518173}
   - component: {fileID: 7432926203274610034}
+  - component: {fileID: 1220606686817576578}
   m_Layer: 7
   m_Name: shootingEnemy
   m_TagString: Enemy
@@ -901,6 +902,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1220606686817576578
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905552652065533690}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &6384973189650818962
 GameObject:
   m_ObjectHideFlags: 0
