@@ -67,15 +67,15 @@ public class ShootingEnemy : MonoBehaviour
         else 
         {
             if(target.transform.position.x < transform.position.x)
-        {
-            localScale.x = -8f;
-            transform.localScale = localScale;
-        }
-        else
-        {
-            localScale.x = 8f;
-            transform.localScale = localScale;
-        }
+            {
+                localScale.x = -8f;
+                transform.localScale = localScale;
+            }
+            else
+            {
+                localScale.x = 8f;
+                transform.localScale = localScale;
+            }
             canShoot = true;
             anim.SetBool("running", false);
         }
@@ -111,15 +111,15 @@ public class ShootingEnemy : MonoBehaviour
         else 
         {
             if(target.transform.position.x < transform.position.x)
-        {
-            localScale.x = -8f;
-            transform.localScale = localScale;
-        }
-        else
-        {
-            localScale.x = 8f;
-            transform.localScale = localScale;
-        }
+            {
+                localScale.x = -8f;
+                transform.localScale = localScale;
+            }
+            else
+            {
+                localScale.x = 8f;
+                transform.localScale = localScale;
+            }
             canShoot = true;
             anim.SetBool("running", false);
         }
