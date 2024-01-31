@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
         if(other.gameObject.tag != "Enemy") 
         {
             Destroy(gameObject);
-            if(other.gameObject.tag == "Player")
+            if(other.gameObject.tag == "Player" && targetPos != new Vector2(transform.position.x, transform.position.y))
                 {
                     PlayerHealth.meleeAttack = false;
                     other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
